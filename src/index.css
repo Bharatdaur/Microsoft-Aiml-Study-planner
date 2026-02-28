@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-50: #ffffff;
+  --color-brand-100: #f9f9f9;
+  --color-brand-200: #eeeeee;
+  --color-brand-300: #dddddd;
+  --color-brand-400: #bbbbbb;
+  --color-brand-500: #888888;
+  --color-brand-600: #666666;
+  --color-brand-700: #444444;
+  --color-brand-800: #222222;
+  --color-brand-900: #000000;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-black font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white border border-brand-200 rounded-xl shadow-sm;
+  }
+  
+  .btn-primary {
+    @apply bg-black text-white px-6 py-3 rounded-lg font-medium transition-all hover:bg-brand-800 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-black border border-brand-200 px-6 py-3 rounded-lg font-medium transition-all hover:bg-brand-100 disabled:opacity-50;
+  }
+}
